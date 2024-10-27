@@ -1,0 +1,11 @@
+variable "region" {}
+variable "vpc-name" {}
+variable "vpc-cidr-block" {}
+variable "public-subnet-1a" {}
+variable "public-subnet-1b" {}
+variable "az-1" {}
+variable "az-2" {}
+variable "pub-cidr-az-1" {}
+variable "pub-cidr-az-2" {}
+variable "priv-cidr-az-1" {}
+variable "priv-cidr-az-2" {}
