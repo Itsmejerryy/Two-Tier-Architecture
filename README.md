@@ -21,6 +21,7 @@ To allow traffic between resources, we need to establish connections. The securi
 - RDS security group - [rds-sg.tf](https://github.com/Itsmejerryy/Two-Tier-Architecture/blob/main/rds-sg.tf)
 
 # Create EC2 Instances
+note: I have a key pair ready. But its optional since I dont need to access ec2 instances
 Create Instances with user data to be deployed in different Availability Zones - [ec2.tf](https://github.com/Itsmejerryy/Two-Tier-Architecture/blob/main/ec2.tf)
 
 # Create Load Balancer and its Configurations
@@ -35,6 +36,8 @@ Create RDS as a Database - [rds.tf](https://github.com/Itsmejerryy/Two-Tier-Arch
 I separated the variable resources from actual values as well as the credentials of database for better management.
 - Variable Resources - [varaibles.tf](https://github.com/Itsmejerryy/Two-Tier-Architecture/blob/main/varaibles.tf)
 - Variable Values - [terraform.tfvars](https://github.com/Itsmejerryy/Two-Tier-Architecture/blob/main/terraform.tfvars) and [secret.tfvars](https://github.com/Itsmejerryy/Two-Tier-Architecture/blob/main/secret.tfvars)
+
+
 
 
 
