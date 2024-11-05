@@ -37,6 +37,25 @@ I separated the variable resources from actual values as well as the credentials
 - Variable Resources - [varaibles.tf](https://github.com/Itsmejerryy/Two-Tier-Architecture/blob/main/varaibles.tf)
 - Variable Values - [terraform.tfvars](https://github.com/Itsmejerryy/Two-Tier-Architecture/blob/main/terraform.tfvars) and [secret.tfvars](https://github.com/Itsmejerryy/Two-Tier-Architecture/blob/main/secret.tfvars)
 
+# Getting the DNS name of Load Balancer
+[output.tf](https://github.com/Itsmejerryy/Two-Tier-Architecture/blob/main/output.tf)
+
+# Execution and Result
+* TERRAFORM PLAN using `terraform plan -var-file="secret.tfvars"`
+* then APPLY using `terraform apply -var-file="secret.tfvars" -auto-approve`
+* After Terraform finishes the execution, DNS name of the load balancer will be outputted paste it to your browser
+  ![image](https://github.com/user-attachments/assets/184bcd0c-5a11-4822-aa3f-cfba109fc5ca)
+
+* If you reload it several times, you will see how the distribution of load across different availability zones.
+  ![image](https://github.com/user-attachments/assets/4e53f3a7-6603-4c9e-8f4a-864060383c17)
+
+  ![image](https://github.com/user-attachments/assets/8dba9c05-0acd-487e-9905-f76370a17b70)
+
+* Finally Destroy using  `terraform destroy -var-file="secret.tfvars" -auto-approve` to avoid unwanted charges.
+
+
+
+
 
 
 
