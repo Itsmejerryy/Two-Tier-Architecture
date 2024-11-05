@@ -4,7 +4,7 @@ resource "aws_security_group" "allow_tls_alb" {
   vpc_id      = aws_vpc.two-tier-vpc.id
 
   tags = {
-    Name = "allow_tls_alb"
+    Name = "alb-sg"
   }
 }
 
@@ -15,7 +15,7 @@ resource "aws_vpc_security_group_ingress_rule" "allow_http_alb" {
   from_port         = 80
   ip_protocol       = "tcp"
   to_port           = 80
-  description = "allow HTTP"
+  description       = "allow HTTP"
 }
 
 #outbound rules

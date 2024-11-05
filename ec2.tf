@@ -1,14 +1,20 @@
 resource "aws_instance" "ec2_subnet_a" {
-    ami = "ami-06b21ccaeff8cd686"
-    instance_type = "t2.micro"
-    subnet_id = aws_subnet.public-subnet-1a.id
-    vpc_security_group_ids = [aws_security_group.allow_tls_ec2.id]
-    associate_public_ip_address = true
-    user_data = filebase64("user_data.sh")
-
+  key_name = var.key_name
+  ami             = var.ec2-config.ami
+  instance_type   = var.ec2-config.instance-type
+  subnet_id       = aws_subnet.public-subnet-1a.id
+  security_groups = [aws_security_group.allow_tls_ec2.id]
+  user_data       = filebase64(var.ec2-config.user_data)
+  associate_public_ip_address = true
 }
 
 
-# resource "aws_instance" "ec2_subnet_b" {
-  
-# }
+resource "aws_instance" "ec2_subnet_b" {
+  key_name = var.key_name
+  ami             = var.ec2-config.ami
+  instance_type   = var.ec2-config.instance-type
+  subnet_id       = aws_subnet.public-subnet-1b.id
+  security_groups = [aws_security_group.allow_tls_ec2.id]
+  user_data       = filebase64(var.ec2-config.user_data)
+  associate_public_ip_address = true
+}
